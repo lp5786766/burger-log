@@ -11,3 +11,15 @@
 -- burger_name: a string.
 
 -- devoured: a boolean.
+
+
+DROP DATABASE IF EXISTS burger_log_DB;
+CREATE DATABASE burger_log_DB;
+USE burger_log_DB;
+
+
+CREATE TABLE my_burgers (
+    id INT(10) AUTO_INCREMENT NOT NULL,
+    name VARCHAR(150) NOT NULL,
+    PRIMARY KEY (id)
+);
