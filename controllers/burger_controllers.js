@@ -13,8 +13,17 @@ const burger = require("../models/burger");
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-    console.log(res)
-    res.render("index", {});
+
+
+    burger.findAll(function(data) {
+        console.log(res)
+        res.render("index", data);
+      });
+
+
+
+
+   
 });
 
 router.post("/api/burgers/:id", (req, res) => {
