@@ -12,3 +12,14 @@ const burger = require("../models/burger");
 // Create the router for the app, and export the router at the end of your file.
 const router = require("express").Router();
 
+router.get("/", (req, res) => {
+    console.log(res)
+    res.render("index", {});
+});
+
+router.post("/api/burgers/:id", (req, res) => {
+    console.log(res)
+});
+
+
+module.exports = router;
