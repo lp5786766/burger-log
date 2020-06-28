@@ -1,5 +1,3 @@
-// TODO:
-
 
 // Import (require) connection.js into orm.js
 const connection = require("../config/connection");
@@ -14,14 +12,34 @@ const orm = {
             }
             allBurgers(result);
         });
-    }
+    },
 
+    insertOne: function(table, cols, vals, allBurgers) {
+        const queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)}) `
+
+        console.log(queryString);
+        connection.query(queryString, vals, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          allBurgers(result);
+        });
+    },
+
+    updateOne: function(table, eaten, allBurgers) {
+        var queryString = `UPDATE ${table} SET true WHERE ${eaten}`;
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          allBurgers(result);
+        });
+    },
 
 }
 
-// insertOne()
-// updateOne()
-
-
-
 // Export the ORM object in module.exports.
+module.exports = orm;

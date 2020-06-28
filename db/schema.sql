@@ -21,5 +21,6 @@ USE burger_log_DB;
 CREATE TABLE my_burgers (
     id INT(10) AUTO_INCREMENT NOT NULL,
     name VARCHAR(150) NOT NULL,
+    eaten BOOLEAN DEFAULT FALSE,
     PRIMARY KEY (id)
 );
