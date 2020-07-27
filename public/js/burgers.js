@@ -1,4 +1,4 @@
-$(function() {
+// $(function() {
     $(".devour").on("click", function(event) {
       // Update the state of the burger.
       $.ajax(`/api/burgers/${id}`, {
@@ -13,7 +13,16 @@ $(function() {
         }
       );
     });
-  
+
+    $(document).ready(function(){
+      $('input.autocomplete').autocomplete({
+        data: {
+          "Apple": null,
+          "Microsoft": null,
+          "Google": 'https://placehold.it/250x250'
+        },
+      });
+    });
     // $(".create-form").on("submit", function(event) {
     //   event.preventDefault();
   
@@ -32,4 +41,4 @@ $(function() {
     //     }
     //   );
     // });
-  });
+  // });
