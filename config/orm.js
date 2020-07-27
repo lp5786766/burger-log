@@ -2,6 +2,15 @@
 // Import (require) connection.js into orm.js
 const connection = require("../config/connection");
 
+function printQuestionMarks(num) {
+  var arr = [];
+
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
+
+  return arr.toString();
+}
 // In the orm.js file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
 const orm = {
     findAll: function(tableInput, allBurgers) {
@@ -14,11 +23,11 @@ const orm = {
         });
     },
 
-    insertOne: function(table, cols, vals, allBurgers) {
-        const queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)}) `
+    insertOne: (table, columns, values, allBurgers) => {
+        const queryString = `INSERT INTO ${table} (${columns.toString()}) VALUES (${printQuestionMarks(values.length)}) `
 
         console.log(queryString);
-        connection.query(queryString, vals, function(err, result) {
+        connection.query(queryString, values, function(err, result) {
           if (err) {
             throw err;
           }

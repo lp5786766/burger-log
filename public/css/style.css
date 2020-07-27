@@ -11,9 +11,6 @@ section {
     border-radius: 40px;
     color: green;
     background-color: rgba(255,255, 255, 0.7);
-
-    /* height: 200px;
-    width: 200px; */
     overflow: hidden;
 }
 
@@ -23,11 +20,6 @@ img {
     width: 40px;
 }
 
-.input-field {
-
-}
-
 #autocomplete-input {
-    /* background-color: rgba(255,255, 255, 0.2); */
     color: white;
 }

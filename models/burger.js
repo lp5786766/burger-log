@@ -9,13 +9,13 @@ const burger = {
             allBurgers(res);
         });
     },
-    insertOne: function(columns, values, allBurgers) {
-        orm.insertOne("my_burgers", columns, values, function(res) {
+    insertOne: (columns, values, allBurgers) => {
+        orm.insertOne("my_burgers", columns, values, (res) => {
             allBurgers(res);
         });
     },
-    updateOne: function(objColVals, condition, allBurgers) {
-        orm.updateOne("my_burgers", objColVals, condition, function(res) {
+    updateOne: (objColVals, allBurgers) => {
+        orm.updateOne("my_burgers", objColVals, (res) => {
             allBurgers(res);
         });
     },
