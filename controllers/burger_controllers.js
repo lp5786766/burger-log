@@ -11,15 +11,12 @@ const burger = require('../models/burger');
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-  burger
-    .findAll((data) => {
-        const hbsObject = {
-            burgers: data
-          };
-          console.log(hbsObject);
-          res.render("index", hbsObject);
-        console.log(data);
+  burger.findAll((data) => {
+    res.render('index', {
+      burgers: data,
+      style: 'style.css',
     });
+  });
 });
 
 router.post('/api/burgers/:id', (req, res) => {

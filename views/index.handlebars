@@ -1,21 +1,5 @@
-<h1>Burger Log</h1>
-
-<h3>Record your burger experience</h3>
-
-
 <ul>
   {{#each burgers}}
-      {{> burgers/burger-block}}
+  {{> burgers/burger-block}}
   {{/each}}
 </ul>
-
-
-<form class="form">
-
-  <div class="form-group">
-    <input type="text" id="burger" name="name">
-  </div>
-
-
-  <button type="submit">Add Burger</button>
-</form>
