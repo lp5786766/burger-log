@@ -11,7 +11,7 @@ $(document).ready(function () {
   $('#devour').on('click', function (event) {
     const id = $(this).data("id");
     // Update the state of the burger.
-    $.ajax(`/api/burgers/${id}`, {
+    $.ajax('/api/burgers/' + id, {
       type: 'PUT',
       data: {
         eaten: true,

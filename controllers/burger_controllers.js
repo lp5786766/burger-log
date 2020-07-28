@@ -30,19 +30,30 @@ router.post('/api/burgers', (req, res) => {
 });
 
 router.put('/api/burgers/:id', (req, res) => {
-  burger.updateOne(
-    {
-      eaten: req.body.eaten,
-    },
-    (result) => {
-      if (result.changedRows == 0) {
-        // If no rows were changed, then the ID must not exist, so 404
-        return res.status(404).end();
-      } else {
-        res.status(200).end();
-      }
+  let condition = `id=${req.params.id}`;
+
+  burger.updateOne({
+    eaten: req.body.eaten
+  }, condition, (result) => {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
     }
-  );
+  });
 });
+
+// router.delete("/api/burgers/:id", (req, res) => {
+//   const id = req.params.id;
+//   burger.delete(id, (result) => {
+//     if (result.affectedRows == 0) {
+//       // If no rows were changed, then the ID must not exist, so 404
+//       return res.status(404).end();
+//     } else {
+//       res.status(200).end();
+//     }
+//   });
+// });
 
 module.exports = router;
