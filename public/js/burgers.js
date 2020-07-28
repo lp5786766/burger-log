@@ -8,7 +8,7 @@ $(document).ready(function () {
     },
   });
 
-  $('.devour').on('click', function (event) {
+  $('#devour').on('click', function (event) {
     const id = $(this).data("id");
     // Update the state of the burger.
     $.ajax(`/api/burgers/${id}`, {
@@ -26,13 +26,11 @@ $(document).ready(function () {
 
 
 
-  $(".create-form").on("submit", (event) => {
+  $(".add-burger").on("submit", (event) => {
     event.preventDefault();
-
     const newBurger = {
       name: $("#burger").val().trim(),
     };
-
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",

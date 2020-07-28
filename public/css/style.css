@@ -8,6 +8,7 @@ body {
 }
 
 section {
+    font-size: 20px;
     border-radius: 40px;
     color: green;
     background-color: rgba(255,255, 255, 0.7);
@@ -20,6 +21,21 @@ img {
     width: 40px;
 }
 
-#autocomplete-input {
+#burger {
     color: white;
+}
+
+#devour {
+    width: 90px;
+    height: 30px;
+}
+
+#delete {
+    width: 30px;
+    height: 30px;
+}
+
+.clear {
+    display: flex;
+    justify-content: space-around;
 }

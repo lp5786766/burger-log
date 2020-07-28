@@ -2,6 +2,9 @@
 	{{name}}
 
 	
+	{{#unless eaten}}<button class="btn waves-effect waves-light btn-small amber" id="devour" data-id="{{this.id}}">Devour!</button>
+	<button class="btn waves-effect waves-light btn-small red darken-4" id="delete" data-id="{{this.id}}"><i class="clear material-icons">clear</i></button>{{else}}<button class="btn waves-effect waves-light btn-small red darken-4" id="delete" data-id="{{this.id}}"><i class="clear material-icons">clear</i></button>{{/unless}}
 
-	<button class="devour" data-id="{{this.id}}">Devour!</button>
+
+	
 </li>

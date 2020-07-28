@@ -1,5 +1,50 @@
-<ul>
-  {{#each burgers}}
-  {{> burgers/burger-block}}
-  {{/each}}
-</ul>
+<div class="container">
+
+  <h1>Burger Log</h1>
+
+  <h3>Record your burger experience</h3>
+  <div class="row">
+    <div class="col s1">
+      <img src="/images/icon.png" />
+    </div>
+    <div class="col s11">
+      <form class="add-burger">
+        <div class="form-group">
+          <div class="input-field">
+            <input type="text" id="burger" class="autocomplete">
+            <label for="autocomplete-input">Enter burger</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-default" id="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <section class="col s6">
+      <h4>On my Plate</h4>
+      <ul>
+        {{#each burgers}}
+        {{#unless eaten}}
+        {{> burgers/burger-block eaten=false}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+
+    </section>
+    <section class="col s6">
+      <h4>Sweet burger memories.</h4>
+      <ul>
+        {{#each burgers}}
+        {{#if eaten}}
+        {{> burgers/burger-block eaten=true}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </section>
+  </div>
+
+
+
+
+</div>
